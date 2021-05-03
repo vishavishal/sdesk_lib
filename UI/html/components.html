@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+      .ui.form .inline.fields .wide.field>input {
+        padding: 4px;
+      }
+      .ui.header {
+        color: white;
+      }
+      .ui.selection.dropdown {
+        min-width: 2em;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="padding-right:10px;">
+      <h3 class="ui center aligned header">Enter the component details</h3>
+      <div class="ui horizontal segments">
+
+        <div class="ui brown inverted segment" id="leftSegment" >
+          <form class="ui form">
+
+            <div class="inline fields">
+              <div class="three wide field"><label>Depth(Height)*</label></div>
+              <div class="seven wide field"><input type="text" placeholder="Depth/Height" id="compDepth" value="1200"></div>
+            </div>
+            <div class="inline fields">
+              <div class="three wide field"><label>Width*</label></div>
+              <div class="seven wide field"><input type="text" placeholder="Width" id="compWidth" value="1600"></div>
+            </div>
+            <div class="inline fields">
+              <div class="three wide field"><label>Breadth(Inner)*</label></div>
+              <div class="seven wide field"><input type="text" placeholder="Breadth" id="compHeight" value="400"></div>
+            </div>
+            <div class="inline fields">
+              <div class="three wide field"><label>Back Panel Offset</label></div>
+              <div class="seven wide field"><input type="text" placeholder="Depth/Height" id="backPanelPosition" value="1200"></div>
+            </div>
+            <div class="inline fields">
+              <div class="three wide field"><label>Skirting</label></div>
+              <div class="seven wide field"><input type="text" placeholder="Depth/Height" id="internalSkirting" value="1200"></div>
+            </div>
+            <div class="inline fields">
+              <div class="three wide field"><label>Loft Skirting</label></div>
+              <div class="seven wide field"><input type="text" placeholder="Depth/Height" id="internalLoftSkirting" value="1200"></div>
+            </div>
+            <div class="inline fields">
+              <div class="three wide field"><label>Shelf Offset</label></div>
+              <div class="seven wide field"><input type="text" placeholder="Depth/Height" id="shelvesFrontOffset" value="1200"></div>
+            </div>
+    
+            <div class="inline fields">
+              <div class="ui three wide field toggle checkbox">
+                <input type="checkbox" id="shelfToggler" name="public">
+                <label>Equal Shelved</label>
+              </div>
+              <div class="seven wide field">
+                <input type="text" id="shelfCount" placeholder="Number of equal spaced shelves" disabled>
+              </div>
+            </div>
+            
+
+          </form>
+        </div>
+        <div class="ui grey inverted segment" id="rightSegment">
+          <h3 class="ui center aligned header"> Placement options</h3>
+          <div class="ui divider"></div>
+          <div >
+            <div class="ui three wide field toggle checkbox">
+              <input type="checkbox" id="wallGluer" name="public">
+              <label>Glue to Wall</label>
+            </div><br><br>
+            <div class="ui right floated black button" data-tooltip="Manually take comp to the model." data-position="left center" data-inverted="">Create -> </div><br><br>
+            <div class="ui divider"></div>
+            <div class="ui right floated black button">Wall Place -> </div><br><br>
+            <div class="ui divider"></div>
+
+            <div class="inline fields" style="width:100px;">
+              <div class="three wide field">
+                <label>Relative to Comp</label>
+              </div>
+              <div class="four wide field" style="width:100px;min-width: 2em;">
+                <select class="ui dropdown" id="spaceType" style="width:100px;min-width: 2em;">
+                  <option value="topLeft">Top Left</option>
+                  <option value="topRight">Top Right</option>
+                  <option value="leftUp">Left Up</option>
+                  <option value="leftBottom">Left Bottom</option>
+                  <option value="rightUp">Right Up</option>
+                  <option value="rightBottom">Right Bottom</option>
+                  <option value="bottomLeft">Bottom Left</option>
+                  <option value="bottomRight">Bottom Right</option>
+                </select>
+              </div>
+              
+
+            </div><br><br>
+            <div class="ui right floated black button">Adjacent Place </div>
+            
+          </div>
+        </div>
+              
+      </div>
+      <script>
+        $("#shelfToggler").click(function(){
+          if($("#shelfToggler").prop("checked") == true){
+            $("#shelfCount").prop("disabled", false)
+          }else {
+            $("#shelfCount").val("");
+            $("#shelfCount").prop("disabled", true);
+          }
+        });
+        $(".ui.dropdown").dropdown();
+      </script>
+    </div>
+  </body>
+</html>

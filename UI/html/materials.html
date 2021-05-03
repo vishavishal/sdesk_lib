@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="../css/semantic.css">
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+      .ui.form .inline.fields .wide.field>input {
+        padding: 4px;
+      }
+      .ui.header {
+        color: white;
+      }
+
+      /* .image-container {
+        display: grid;
+        border: 2px solid;
+        padding: 2px;
+        box-shadow: 5px 10px 8px 10px #888888;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      } */
+
+      .image-container {
+        flex-wrap: wrap;
+        align-content: flex-start;
+        justify-content: space-between;
+        box-shadow: 5px 10px 8px 10px #888888;
+        margin: 10px;
+      }
+
+      .image-container a img {
+        width: 100px;
+        height: 100px;
+        background-color: #535c68;
+        padding: 5px;
+        margin: 10px;
+        border-radius: 10px;
+      }
+      
+      .box {
+        border-radius: 10px;
+      }
+
+
+
+      input[type="radio"][id^="rad"] {
+        display: none;
+      }
+
+      :checked + label {
+        border-color: #ddd;
+      }
+
+      :checked + label:before {
+        /* content: "✓"; */
+        background-color: grey;
+        transform: scale(1);
+      }
+
+      :checked + label img {
+        transform: scale(0.9);
+        box-shadow: 0 0 5px #333;
+        z-index: -1;
+        border: 4px solid blue;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div>
+      <form class="ui form">
+        <h3 class="ui center aligned header">Add Material/Texture to Comp</h3>
+        <div>
+
+          <div class="inline fields">
+            <div class="three wide field">
+              <label>Space Type</label>
+            </div>
+            <div class="seven wide field" >
+              <select class="ui fluid selection dropdown" id="spaceType">
+                <option value="material_brand1">Brand1</option>
+                <option value="material_brand2">Brand2</option>
+                <option value="material_brand3">Brand3</option>
+              </select>              
+            </div>
+          </div>
+
+
+          <div class="image-container">
+            <a class="box" href="#"><input name ="myradio" type="radio" id="rad1" /><label for="rad1"><img src="../assets/images/materials/757-DT-1.jpg" alt="">hkjh</label></a>
+            <a class="box" href="#"><input name ="myradio" type="radio" id="rad2" /><label for="rad2"><img src="../assets/images/materials/821_SMR.jpg" alt="">sdfsdf</label></a>
+            <a class="box" href="#"><input name ="myradio" type="radio" id="rad3" /><label for="rad3"><img src="../assets/images/materials/854.jpg" alt="">dsfsd</label></a>
+            <a class="box" href="#"><input name ="myradio" type="radio" id="rad4" /><label for="rad4"><img src="../assets/images/materials/903.jpg" alt=""></label></a>
+            <a class="box" href="#"><input name ="myradio" type="radio" id="rad5" /><label for="rad5"><img src="../assets/images/materials/935-SF.jpg" alt=""></label></a>
+            <a class="box" href="#"><input name ="myradio" type="radio" id="rad6" /><label for="rad6"><img src="../assets/images/materials/937_SMR-1.jpg" alt=""></label></a>
+            <a class="box" href="#"><input name ="myradio" type="radio" id="rad7" /><label for="rad7"><img src="../assets/images/materials/946_SF.jpg" alt=""></label></a>
+            <a class="box" href="#"><input name ="myradio" type="radio" id="rad8" /><label for="rad8"><img src="../assets/images/materials/957_SF.jpg" alt=""></label></a>
+          </div>
+  
+        </div>
+        <br/>
+        <button class="ui green button" id="apply_material_button" style="display:block">Apply material</button>
+
+        
+      </form>
+    </div>
+    <script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="../js/semantic.js"></script>
+    <script>
+      $('.ui.dropdown').dropdown();
+      $('img').click(function(){
+        var imagePath = $(this).attr('src');
+        var filename = imagePath.replace(/.*(\/|\\)/, '');
+        console.log(imagePath);
+        console.log(filename);
+      });
+
+      $("apply_material_button").click(function(){
+        var imageSelected = getSelectedImage();
+        var brandSelected = $("#spaceType").val().split[1];
+
+      });
+      function getSelectedImage(){
+        var imagePath = $(this).attr('src');
+        var fileName = imagePath.replace(/.*(\/|\\)/, '');
+        console.log(imagePath);
+        console.log(fileName);
+        return fileName;
+      }
+    </script>
+  </body>
+</html>

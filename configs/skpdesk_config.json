@@ -1,0 +1,6 @@
+{
+  "name": "SKPDESK",
+  "description": "First test version",
+  "loader": "skpdesk_loader.rb",
+  "version": "T_1.0.0"
+}

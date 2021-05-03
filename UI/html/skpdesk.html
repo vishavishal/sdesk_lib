@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+      /* * {
+        font-family: 'Roboto', sans-serif;
+      } */
+      * {
+        padding: 0px;
+      }
+      .ui.form .inline.fields .field>label {
+        color: white;
+      }
+      .ui.dividing.header {
+        color: white;
+      }
+    </style>
+    
+  </head>
+  <body>
+    <div class="ui container-fluid">
+      <div class="ui top attached menu inverted">
+        <div class="menu" style="color: white;padding-left: 12px;"><h1>SKPDesK</h1></div>
+      </div>
+      <div class="ui grid">
+        <!--            Side Menu             -->
+        <div class="three wide column" style="padding-right: 0em;text-align: center;background: #273c75">
+          <div id="menus" class="ui vertical fluid tabular menu">
+            <a href="#" class="item fbutton" id="pro_details_menu">
+              <i></i>
+              <img src="../assets/images/architect.png"><br/><br/>Project
+            </a>
+            <a href="#"  class="item fbutton" id="floor_details_menu">
+              <i></i>
+              <img src="../assets/images/plan.png" ><br/><br/>Floor Plan
+            </a>
+            <a href="#"  class="item fbutton" id="comp_details_menu">
+              <i></i>
+              <img src="../assets/images/dresser.png"><br/><br/>Comps
+            </a>
+            <a href="#" class="item active fbutton" id="color_details_menu">
+              <i></i>
+              <img src="../assets/images/dresser.png"><br/><br/>Color
+            </a>
+            <a href="#"  class="item fbutton" id="">
+              <i></i>
+              <img src="../assets/images/dresser.png"><br/><br/>Working Drawing
+            </a>
+            <a href="#"  class="item fbutton" id="">
+              <i></i>
+              <img src="../assets/images/dresser.png"><br/><br/>BOM
+            </a>
+          </div>
+        </div>
+        <!--            Side Menu end           -->
+
+        <!--          Main content            -->
+        <div class="thirteen wide column" 
+            id="page-info" 
+            style=" background: #218c74;
+            height: -webkit-fill-available;">
+          <div id="page_content" style="height: 700px;overflow-x: scroll;">
+            
+          </div>
+        </div>
+        <!--          Main content end            -->
+      </div>
+    </div>
+
+    <script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="../js/skpdesk_main.js"></script>
+    <script type="text/javascript" src="../js/semantic.js"></script>
+    
+  </body>  
+</html>

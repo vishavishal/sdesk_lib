@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+  <script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript" src="../js/semantic.js"></script>
+  <script>
+    $(document).ready(function(){
+      console.log("Inside.........");
+      $("#create_wall_item").click(function(){
+        let wallDetails = {
+          itemType: $("#item_type option:selected").text(),
+          doorHeight: $("#doorHeight").val(),
+          doorLength:$("#doorLength").val(),
+          doorOffset:$("#doorOffset").val(),
+          windowHeight:$("#windowHeight").val(),
+          windowLength: $("#windowLength").val(),
+          windowVerOffset: $("#windowVerOffset").val(),
+          windowHorOffset: $("#windowHorOffset").val()
+        }
+        console.log("Create Wall...Params : "+JSON.stringify(wallDetails));
+        window.location.href = "skp:createWallItem@"+JSON.stringify(wallDetails);
+      });
+      $('.ui.dropdown').dropdown();
+    });
+
+  </script>
+</head>
+<body>
+<form class="ui form">
+  <div class="field">
+    <label>Item type</label>
+    <select class="ui fluid dropdown" id="item_type">
+      <option value="door_type">Door</option>
+      <option value="window_type">Window</option>
+    </select>
+  </div>
+  <div class="field">
+    <label>Door Height</label>
+    <input type="text" id="doorHeight" placeholder="Door Height" value="1400">
+  </div>
+  <div class="field">
+    <label>Door Width</label>
+    <input type="text" id="doorLength" placeholder="Door Width" value="800">
+  </div>
+  <div class="field">
+    <label>Door Offset</label>
+    <input type="text" id="doorOffset" placeholder="Door Offset from left" value="1000">
+  </div>
+
+  <div class="field">
+    <label>Window Height</label>
+    <input type="text" id="windowHeight" placeholder="Window Height" value="700">
+  </div>
+  <div class="field">
+    <label>Window Width</label>
+    <input type="text" id="windowLength" placeholder="Window Width" value="500">
+  </div>
+  <div class="field">
+    <label>Window Floor Offset</label>
+    <input type="text" id="windowVerOffset" placeholder="Window Offset from floor" value="500">
+  </div>
+  <div class="field">
+    <label>Window Wall Offset</label>
+    <input type="text" id="windowHorOffset" placeholder="Window Offset from left Wall" value="500">
+  </div>
+  <div class="ui button" type="submit" id="create_wall_item">Create</div>
+</form>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "root_files": {
+  },
+  "Helper": {
+    "CivilHelper": 101,
+    "GeomHelper": 102,
+    "SDKHelper": 103,
+    "MenuHelper": 104
+  },
+  "Model": {
+    "CivilModel": 201
+  },
+  "Controller": {
+    "UIController": 301,
+    "CivilController": 302,
+    "CompController": 303,
+    "MaterialController": 304
+  }
+}

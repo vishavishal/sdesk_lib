@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/toastr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+<!--    <script type="text/javascript" src="../js/skpdesk_main.js"></script>-->
+    <script type="text/javascript" src="../js/semantic.js"></script>
+
+    <style>
+      .ui.form .inline.fields .field>label {
+        color: black;
+      }
+      .ui.aligned.header {
+        color: black;
+      }
+      h3 {
+        color: black;
+      }
+      .ui.inverted.segment {
+        background-color: #2f3542;
+        margin-right: 10px;
+      }
+    </style>
+    <script>
+      $(document).ready(function(){
+        $(".civilItem").click(function(){
+          console.log("Inside....")
+          alert($(this).attr("value"));
+        })
+      });
+
+    </script>
+  </head>
+  <body>
+    <div style="width:800px; margin:0 auto;" id="civilSel">
+      <h3 class="ui aligned header">Select the Civil items</h3>
+      <div class="ui inverted button civilItem" value="door">Door</div>
+      <div class="ui inverted button civilItem" value="window">Window</div>
+      <div class="ui inverted button civilItem" value="split">Split</div>
+    </div>
+    
+    <div class="ui divider"></div>
+
+    <div>
+      <div class="ui inverted segment">
+        <form class="ui form">
+          <h3 class="ui center aligned header">Create the room space</h3>
+          <div class="ui divider"></div>
+
+          <!--  Room Name -->
+          <div class="inline fields">
+            <div class="three wide field">
+              <label>Space Name</label>
+            </div>
+            <div class="three wide field">
+              <input type="text" placeholder="Space Name" id="spaceName" value="Space1">
+            </div>
+          </div>
+        
+          <!--  Room Name -->
+          <div class="inline fields">
+            <div class="three wide field">
+              <label>Space Type</label>
+            </div>
+            <div class="seven wide field">
+              <select class="ui dropdown" id="spaceType">
+                <option value="spaceKitchen">Kitchen</option>
+                <option value="spaceBedroom">Bedroom</option>
+                <option value="spaceBalcony">Balcony</option>
+              </select>
+            </div>
+          </div>
+        
+          <div class="inline fields">
+            <div class="three wide field">
+              <label>Wall Height</label>
+            </div>
+            <div class="three wide field">
+              <input type="text" placeholder="Wall Height in mm" id="wallHeight" value="2900">
+            </div>
+          </div>
+        
+          <div class="inline fields">
+            <div class="three wide field">
+              <label>Door Height</label>
+            </div>
+            <div class="three wide field">
+              <input type="text" placeholder="Door height in mm" id="doorHeight" value="1400">
+            </div>
+          </div>
+        
+          <div class="inline fields">
+            <div class="three wide field">
+              <label>Window Height</label>
+            </div>
+            <div class="three wide field">
+              <input type="text" placeholder="Window Height in mm" id="windowHeight" value="1000">
+            </div>
+          </div>
+        
+          <div class="inline fields">
+            <div class="three wide field">
+              <label>Window Offset</label>
+            </div>
+            <div class="three wide field">
+              <input type="text" placeholder="Window offset in mm" id="windowOffset" value="600">
+            </div>
+          </div>
+        
+        
+          <div class="ui inverted button" id="buildSpace">Build Space</div>
+        
+        
+        </form>
+      </div>
+    </div>
+    <script>
+      $(".ui.dropdown").dropdown();
+    </script>
+  </body>
+</html>

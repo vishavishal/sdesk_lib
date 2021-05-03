@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/toastr.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+    <link rel="stylesheet" type="text/css" href="../css/style.css">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="../js/jquery-3.5.1.min.js"></script>
+    <script type="text/javascript" src="../js/skpdesk_main.js"></script>
+    <script type="text/javascript" src="../js/semantic.js"></script>
+
+    <style>
+      .ui.form .inline.fields .field>label {
+        color: white;
+      }
+      .ui.dividing.header {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form class="ui form">
+        <h2 class="ui dividing header" >Project Information</h2>
+        
+        <div class="inline fields">
+          <div class="three wide field">
+            <label>Name</label>
+          </div>
+          <div class="seven wide field">
+            <input type="text" placeholder="Client Name" id="clientName" value="Client_filler">
+          </div>
+        </div>
+  
+        <div class="inline fields">
+          <div class="three wide field">
+            <label>Project Type</label>
+          </div>
+          <div class="seven wide field">
+            <select class="ui dropdown" id="projectType">
+              <option value="residential">Residential</option>
+              <option value="commercial">Commercial</option>
+            </select>
+          </div>
+        </div>
+  
+        <div class="inline fields">
+          <div class="three wide field">
+            <label>Design inclusions</label>
+          </div>
+          <div class="seven wide field">
+            <select name="skills" multiple="" class="ui dropdown" id="compLanguages">
+              <option value="">Skills</option>
+              <option value="angular">Angular</option>
+              <option value="css">CSS</option>
+              <option value="design">Graphic Design</option>
+              <option value="sad">Graphic Design</option>
+              <option value="sada">Graphic Design</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <button class="ui right floated black button" id="projectSubmit" style="margin-right: 20px;">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      $(".ui.dropdown").dropdown();
+      $("#projectSubmit").click(function(){
+          let projectDetails = {
+            clientName:             $("#clientName").val(),
+            locationName:           $("#locationName").val(),
+            projectType:            $("#projectType option:selected").val(),
+            compLanguages:          $("#compLanguages").val(),
+            progressDetails:        $("#example1").progress('get percent')
+          
+          }
+          alert(JSON.stringify(projectDetails));
+        });
+    </script>
+
+  </body>
+</html>
